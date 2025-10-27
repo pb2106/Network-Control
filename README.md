@@ -183,69 +183,6 @@ Edit `frontend/vite.config.ts` to change:
 - Message history sent to new connections
 - No data loss during brief disconnections
 
-## 📊 Database Schema
-
-### devices
-- `id`: Primary key
-- `mac`: MAC address (unique)
-- `ip`: IP address
-- `hostname`: Device hostname
-- `role`: Admin/Volunteer/Others
-- `status`: active/blocked/kicked
-- `last_seen`: Last detection timestamp
-- `updated_at`: Last modification timestamp
-
-### users
-- `id`: Primary key
-- `username`: Unique username
-- `hashed_password`: Bcrypt hashed password
-- `role`: admin/viewer
-- `last_login`: Last login timestamp
-- `created_at`: Account creation timestamp
-
-### alerts
-- `id`: Primary key
-- `message`: Alert message
-- `level`: info/warning/danger
-- `timestamp`: Alert creation time
-- `read`: Read status boolean
-
-### sessions
-- `id`: Primary key
-- `user_id`: Reference to user
-- `device_id`: Reference to device
-- `active`: Session active status
-- `started_at`: Session start time
-- `ended_at`: Session end time
-
-### firewall_logs
-- `id`: Primary key
-- `action`: block/unblock/kick
-- `target_ip`: Affected IP address
-- `admin`: Admin who performed action
-- `timestamp`: Action timestamp
-- `success`: Success status
-- `details`: Additional details/errors
-
-## 🎨 UI Theme
-
-### Color Palette
-
-- **Background Light**: `#F8FAFC`
-- **Background Dark**: `#0F172A`
-- **Primary**: `#1E293B`
-- **Accent**: `#3B82F6`
-- **Text Light**: `#111827`
-- **Text Dark**: `#E5E7EB`
-
-### Design Principles
-
-- Flat, enterprise-clean aesthetic
-- Rounded corners (`rounded-xl`)
-- Soft shadows for depth
-- Consistent spacing
-- Responsive layout
-
 ## 🔍 Troubleshooting
 
 ### Network Scanning Issues
@@ -316,9 +253,6 @@ This is a complete, production-ready solution. For modifications:
 3. Test thoroughly before deployment
 4. Update README with new features
 
-## 📄 License
-
-This project is provided as-is for network management purposes. Use responsibly and in compliance with local laws and regulations.
 
 ## ⚠️ Legal Disclaimer
 
@@ -338,4 +272,4 @@ For issues:
 
 ---
 
-**Built with**: FastAPI, React, TypeScript, TailwindCSS, SQLite, WebSockets
+**Built with**: FastAPI, React, TypeScript, TailwindCSS, SQLite, WebSockets and evillimiter credits to [@bitbrute](https://github.com/bitbrute) checkout [Evil limiter](https://github.com/bitbrute/evillimiter-windows)
